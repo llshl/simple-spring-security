@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+    <h1>Hello world!</h1>
+    로그인 된 사람만 볼 수 있다.
+
+    <h1 th:inline="text">어서오세요 [[${#httpServletRequest.remoteUser}]] 님!</h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+
+</body>
+</html>
